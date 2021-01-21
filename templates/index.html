@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div style="color:rgba(255, 255, 255, 0.911)">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Predictive analysis</h1>
+            <h3>Year</h3>
+            <input id="one" name="Year" type="number ">
+            <h3>Showroom Price(In lakhs)</h3>
+            <input id="two" name="Present_Price" required="required">
+            <h3>Kilometers Drived</h3>
+            <input id="three" name="Kms_Driven" required="required">
+            <h3>Previous Owners</h3>
+            <input id="four" name="Owner" required="required">
+            <h3>Fuel type</h3><br><select name="Fuel_Type_Petrol" id="five" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <h3>Dealer / Individual</h3><br><select name="Seller_Type_Individual" id="six" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="seven" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="eight" type="submit">Selling Price</button>
+            <br>
+        </form>
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+</body>
+</html>
+
+
+    <style>
+        body {
+            background-color: rgb(150, 150, 150);     
+            text-align: center;
+            padding: 0px;
+        }
+        
+        /* #trial{
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+         */
+
+
+         #one {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #two {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #three {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #four {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        
+        #five {
+            width: 255px;
+            height: 25px;
+            text-align: right;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        
+        #five:hover {
+            background-color: rgb(255, 255, 255);
+        }
+
+
+        #six {
+            width: 255px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #six:hover {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+
+        
+        #seven {
+            width: 255px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #seven:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        
+        
+        #eight {
+            width: 120px;
+            height: 63px;
+            text-align: right;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #eight:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        
+    </style>
